@@ -1,14 +1,15 @@
 package com.gildedrose;
 
 class GildedRose {
-    Item[] items;
+    UpdateableItem[] items;
 
-    public GildedRose(Item[] items) {
+    public GildedRose(UpdateableItem[] items) {
         this.items = items;
     }
 
     public void updateQuality() {
-        for (Item item : items) {
+        for (UpdateableItem item : items) {
+            item.update();
             switch (item.name) {
                 case "Aged Brie":
                     updateAgedBrie(item);
